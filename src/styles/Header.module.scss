@@ -1,0 +1,28 @@
+.header {
+	&_background_container {
+		background: hsl(241, 81%, 54%);
+		background: linear-gradient(0,  hsl(241, 81%, 54%) 0%,  hsl(252, 100%, 67%) 100%);
+		border-radius: 0;
+		border-bottom-left-radius: 7%;
+		border-bottom-right-radius: 7%;
+	}
+  &_caption{
+    margin-top: .5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgb(200, 199, 255);
+  }
+  &_title{
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+  }
+  &_text{
+    font-size: 1rem;
+    padding-bottom: 1rem;
+    width:80%;
+  }
+}

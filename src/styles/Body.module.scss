@@ -1,0 +1,78 @@
+.body {
+	&_title {
+		width: fit-content;
+		font-size: 1.2rem;
+		font-weight: 700;
+		color: hsl(224, 30%, 27%);
+		margin-bottom: 1.2rem;
+	}
+	&_btn {
+		margin-top: 1rem;
+		background-color: rgb(48, 59, 90);
+		border-color: rgb(48, 59, 90);
+		border-radius: 30px;
+		width: 100%;
+		padding: 0.75rem 0;
+		&:hover,
+		&:focus {
+			background: hsl(241, 81%, 54%);
+			background: linear-gradient(0, hsl(241, 81%, 54%) 0%, hsl(252, 100%, 67%) 100%);
+		}
+
+		&:active {
+			background: hsl(241, 81%, 54%);
+			background: linear-gradient(0, hsl(241, 81%, 54%) 0%, hsl(252, 100%, 67%) 100%);
+		}
+	}
+	&_list_item {
+		margin-bottom: 1rem;
+
+		border-radius: 5px;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		// border-radius;
+		&_category {
+			float: left;
+			font-weight: 700;
+			&_red {
+				color: hsl(0, 100%, 67%);
+			}
+			&_yellow {
+				color: hsl(39, 100%, 56%);
+			}
+			&_green {
+				color: hsl(166, 100%, 37%);
+			}
+			&_blue {
+				color: hsl(234, 85%, 45%);
+			}
+		}
+		&_score {
+			float: right;
+			font-weight: 700;
+			&_number {
+				font-weight: 700;
+				color: hsl(224, 30%, 27%);
+			}
+		}
+		&_icon {
+			margin-right: 1rem;
+		}
+		&_red {
+			background-color: hsla(0, 100%, 67%, 0.05);
+			border-color: hsla(0, 100%, 67%, 0.1);
+		}
+		&_yellow {
+			background-color: hsla(39, 100%, 56%, 0.05);
+			border-color: hsla(39, 100%, 56%, 0.1);
+		}
+		&_green {
+			background-color: hsla(166, 100%, 37%, 0.05);
+			border-color: hsla(166, 100%, 37%, 0.1);
+		}
+		&_blue {
+			background-color: hsla(234, 85%, 45%, 0.05);
+			border-color: hsla(234, 85%, 45%, 0.1);
+		}
+	}
+}

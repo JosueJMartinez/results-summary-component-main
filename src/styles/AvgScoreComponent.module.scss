@@ -1,0 +1,41 @@
+.avg_score {
+	&_container {
+		display: inline-block;
+		position: relative;
+		width: 160px;
+		border-radius: 100%;
+    
+	}
+	&_filler {
+		margin-top: 100%;
+	}
+	&_element {
+		&_container {
+      position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			border-radius: 50%;
+      background: rgb(78, 33, 202);
+      background: linear-gradient(0, hsla(241, 72%, 46%, 0) 0%, hsla(256, 72%, 46%, 1) 100% );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+		}
+    &_score{
+      margin-top: 1rem;
+      font-size: 3.5rem;
+      color: white;
+      line-height: 2rem;
+      font-weight: 800;
+      // color: #2421ca00;
+    }
+    &_from_total{
+      color: rgb(200, 199, 255);
+      margin-top: 1rem;
+      line-height: 1rem;
+    }
+	}
+}
