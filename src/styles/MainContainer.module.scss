@@ -1,6 +1,15 @@
-.background_container {
-  background-color: red;
-  // width: 100%;
+@media (min-width: 768px) {
+	.mainContainer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+		&_card {
+			flex-direction: row;
+			width: 700px;
+      border: 1px hsl(221, 100%, 96%) solid;
+      border-radius: 35px;
+      box-shadow: 5px 15px 15px hsl(221, 100%, 96%);
+		}
+	}
 }
-
-

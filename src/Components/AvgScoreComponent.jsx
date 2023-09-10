@@ -1,9 +1,7 @@
 import styles from '../styles/AvgScoreComponent.module.scss';
 
-function AvgScoreComponent() {
-
-  const score = 76;
-
+function AvgScoreComponent({score}) {
+	
 	return (
 		<div className={styles.avg_score_container}>
 			<div className={styles.avg_score_filler}></div>

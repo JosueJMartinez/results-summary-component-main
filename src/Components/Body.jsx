@@ -1,40 +1,12 @@
-import { useState, useEffect, useRef } from 'react';
-
 import styles from '../styles/Body.module.scss';
-import { Container, Row, Col, Card, Button, ListGroup } from 'react-bootstrap';
+import { Card, Button, ListGroup } from 'react-bootstrap';
 
 import reactionSVG from '../assets/images/icon-reaction.svg';
 import memorySVG from '../assets/images/icon-memory.svg';
 import verbalSVG from '../assets/images/icon-verbal.svg';
 import visualSVG from '../assets/images/icon-visual.svg';
-/* import { BackCreditCard } from './BackCreditCard';
-import { FrontCreditCard } from './FrontCreditCard';
-import { CreditCardForm } from './CreditCardForm';
-import { CompleteNotification } from './CompleteNotification'; */
 
-function Body() {
-	const jsonData = [
-		{
-			category: 'Reaction',
-			score: 80,
-			icon: reactionSVG,
-		},
-		{
-			category: 'Memory',
-			score: 92,
-			icon: memorySVG,
-		},
-		{
-			category: 'Verbal',
-			score: 61,
-			icon: verbalSVG,
-		},
-		{
-			category: 'Visual',
-			score: 72,
-			icon: visualSVG,
-		},
-	];
+function Body({ jsonData }) {
 	const cssColor = {
 		Reaction: {
 			background: `${styles.body_list_item_red} `,
@@ -53,46 +25,30 @@ function Body() {
 			font: `${styles.body_list_item_category_blue}`,
 		},
 	};
-	/* const [creditFormData, setCreditFormData] = useState({
-		cardName: '',
-		cardNumber: '',
-		cardCvc: '',
-		cardExpMonth: '',
-		cardExpYear: '',
-		complete: false,
-	});
 
-	const [mainFormStyle, setMainFormStyle] = useState({});
-
-	const isInitialMount = useRef(true);
-
-	useEffect(() => {
-		const handleWindowResize = () => {
-			if (window.innerWidth < 1200) {
-				setMainFormStyle({});
-			} else if (window.innerWidth < 1340) {
-				setMainFormStyle({
-					right: `${window.innerWidth - 1190}px`,
-				});
-			} else {
-				setMainFormStyle({
-					right: `${(window.innerWidth - 983) / 2}px`,
-				});
-			}
-		};
-
-		if (isInitialMount.current) {
-			handleWindowResize();
+	const getIcon = iconStr => {
+		const start = iconStr.indexOf('-') + 1;
+		const end = iconStr.lastIndexOf('.');
+		const icon = iconStr.slice(start, end);
+		let actualIcon = null;
+		switch (icon) {
+			case 'reaction':
+				actualIcon = reactionSVG;
+				break;
+			case 'memory':
+				actualIcon = memorySVG;
+				break;
+			case 'verbal':
+				actualIcon = verbalSVG;
+				break;
+			case 'visual':
+				actualIcon = visualSVG;
+				break;
+			default:
+				console.log('no icon found');
 		}
-		window.addEventListener('resize', handleWindowResize);
-		return () => {
-			window.removeEventListener('resize', handleWindowResize);
-		};
-	}, []);
-
-	const handleCreditCardChange = newCreditData => {
-		setCreditFormData(newCreditData);
-	}; */
+		return actualIcon;
+	};
 	const displayItems = () => {
 		const values = jsonData.map((item, idx) => {
 			return (
@@ -102,7 +58,7 @@ function Body() {
 					className={`${styles.body_list_item} ${cssColor[item.category].background}`}
 				>
 					<span className={`${styles.body_list_item_category} ${cssColor[item.category].font}`}>
-						<img src={item.icon} alt='Icon' className={styles.body_list_item_icon} />
+						<img src={getIcon(item.icon)} alt='Icon' className={styles.body_list_item_icon} />
 						{item.category}
 					</span>
 					<span className={styles.body_list_item_score}>
@@ -115,7 +71,7 @@ function Body() {
 	};
 
 	return (
-		<Card>
+		<Card className={styles.body_container}>
 			<Card.Body>
 				<Card.Title className={styles.body_title}>Summary</Card.Title>
 				<ListGroup as='ul'>{displayItems()}</ListGroup>

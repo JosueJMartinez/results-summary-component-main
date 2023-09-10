@@ -76,3 +76,11 @@
 		}
 	}
 }
+
+@media (min-width: 768px) {
+  .body_container{
+    width: 50%;
+		border-radius:35px;
+		padding: .5rem;
+  }
+}
