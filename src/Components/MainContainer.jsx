@@ -1,14 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 import styles from '../styles/MainContainer.module.scss';
 import { Container, Card } from 'react-bootstrap';
 import Header from './Header';
 import Body from './Body';
 
-
 function MainContainer() {
 	const percentage = 72;
-	const score = 76;
+
 	const jsonData = [
 		{
 			category: 'Reaction',
@@ -52,7 +51,7 @@ function MainContainer() {
 		return Math.floor(sum / jsonData.length);
 	};
 
-	const checkMobileOrDesktop=()=>{
+	const checkMobileOrDesktop = () => {
 		if (viewportWidth < 576) {
 			return (
 				<Card className={styles.mainContainer_card}>
@@ -70,13 +69,9 @@ function MainContainer() {
 				</Container>
 			);
 		}
-	}
+	};
 
-	return (
-		<main>
-			{checkMobileOrDesktop()}
-		</main>
-	);
+	return <main>{checkMobileOrDesktop()}</main>;
 }
 
 export default MainContainer;
